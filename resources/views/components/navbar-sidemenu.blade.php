@@ -31,14 +31,14 @@
                     </li>
                     <li class="nk-menu-item">
                         <a href="/dashboard" class="nk-menu-link">
-                            <span class="nk-menu-icon"><em class="icon ni ni-user-add"></em></span>
-                            <span class="nk-menu-text">Personal Information</span>
+                            <span class="nk-menu-icon"><em class="icon ni ni-dashboard"></em></span>
+                            <span class="nk-menu-text">Dashboard</span>
                         </a>
                     </li>
                     <li class="nk-menu-item">
-                        <a href="/transaction-logs" class="nk-menu-link">
+                        <a href="/customers" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-user-add"></em></span>
-                            <span class="nk-menu-text">Transaction Logs</span>
+                            <span class="nk-menu-text">Customer</span>
                         </a>
                     </li>
                 </ul>
