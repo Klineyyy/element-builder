@@ -62,7 +62,7 @@
                     <p>You can create new customer to monitor.</p>
                     <hr class="mt-2 mb-2">
 
-                    <form action=""> 
+                    <form action="" autocomplete="off"> 
                         @csrf
                         <div class="row mt-2 align-center">
                             <div class="col-lg-5">
@@ -79,7 +79,7 @@
                                     <div class="form-icon form-icon-right">
                                         <em class="icon ni ni-info"></em>
                                     </div>
-                                    <input type="text"  class="form-control" id="inp_fn" name="inp_fn" placeholder="Enter (Optional) First Name here.. ">
+                                    <input type="text"  required class="form-control" id="inp_fn" name="inp_fn" placeholder="Enter First Name here.. ">
                                 </div>
                                 
                             </div>
@@ -99,7 +99,7 @@
                                     <div class="form-icon form-icon-right">
                                         <em class="icon ni ni-info"></em>
                                     </div>
-                                    <input type="text"  class="form-control" id="inp_ln" name="inp_ln" placeholder="Enter (Optional) Last Name here.. ">
+                                    <input type="text"  required class ="form-control" id="inp_ln" name="inp_ln" placeholder="Enter Last Name here.. ">
                                 </div>
                                 
                             </div>
@@ -116,7 +116,7 @@
                             <div class="col-lg-7">
                                 
                                 <select class="form-select">
-                                    <option value="" data-select2-id="3" style="text-transform: uppercase !important;">-- SELECT GENDER --</option>
+                                    <option value="" data-select2-id="3" style="text-transform: uppercase !important;">Select Gender</option>
                                         <option value="Male" data-select2-id="16">Male</option>
                                     <option value="Female" data-select2-id="16">Female</option>
                                 </select>
@@ -134,10 +134,10 @@
                             </div>
                             <div class="col-lg-7">
                                 
-                                <select class="form-select">
-                                    <option value="" data-select2-id="3" style="text-transform: uppercase !important;">-- SELECT REGION --</option>
-                                    </select>
-                                    
+                                <select class="form-select" name="region" id="region" onchange="get_province(this.value)">
+                                    <option value="">Select Region</option>
+                                </select>
+
                             </div>
                         </div>    
                         <div class="row mt-2 align-center">
@@ -151,9 +151,9 @@
                             </div>
                             <div class="col-lg-7">
                                 
-                                <select class="form-select">
-                                    <option value="" data-select2-id="3" style="text-transform: uppercase !important;">-- SELECT PROVINCE --</option>
-                                    </select>
+                                <select class="form-select" name="province" id="province" onchange="get_citymun(this.value)">
+                                    <option value="">Select Province</option>
+                                </select>
                                     
                             </div>
                         </div>    
@@ -168,9 +168,9 @@
                             </div>
                             <div class="col-lg-7">
                                 
-                                <select class="form-select">
-                                    <option value="" data-select2-id="3" style="text-transform: uppercase !important;">-- SELECT CITY/MUNICIPALITY --</option>
-                                    </select>
+                                <select class="form-select" name="citymun" id="citymun" onchange="get_brgy(this.value)">
+                                    <option value="">Select City/Municipality</option>
+                                </select>
                                     
                             </div>
                         </div>    
@@ -178,19 +178,20 @@
                             <div class="col-lg-5">
                                 
                                 <div class="form-group">
-                                    <label class="form-label" for="inp_barangay">Barangay <b class="text-danger">*</b></label>
+                                    <label class="form-label" for="inp_brgy">Barangay<b class="text-danger">*</b></label>
                                     <span class="form-note">Specify the Barangay here.</span>
                                 </div>
                                                
                             </div>
                             <div class="col-lg-7">
                                 
-                                <select class="form-select">
-                                    <option value="" data-select2-id="3" style="text-transform: uppercase !important;">-- SELECT BARANGAY --</option>
-                                    </select>
+                                <select class="form-select" name="brgy" id="brgy">
+                                    <option value="">Select Barangay</option>
+                                </select>
                                     
                             </div>
                         </div>    
+
                         <div class="row mt-2 align-center">
                             <div class="col-lg-5">
                                 
@@ -206,16 +207,16 @@
                                     <div class="form-icon form-icon-right">
                                         <em class="icon ni ni-info"></em>
                                     </div>
-                                    <input type="text"  class="form-control" id="inp_pc" name="inp_pc" placeholder="Enter (Optional) Postal Code here.. ">
+                                    <input type="number" pattern="[0-9]" class="form-control" id="inp_pc" name="inp_pc" placeholder="Enter (Optional) Postal Code here.. ">
                                 </div>
                                 
                             </div>
-                        </div>    
+                        </div>     
                                     
                         <div class="col-lg-5">
                         </div>
                         <div class="col-lg-7" style="float: right">
-                            <hr>
+                            <hr >
                         </div>
                     
                         <div class="col-lg-5">
@@ -224,11 +225,11 @@
                             <hr>
                             <div class="form-group mt-2 mb-2 justify-end">
                                 <button type="reset" class="btn btn-light bg-white mx-3">
-                                    <em class="icon ni ni-repeat"></em>
+                                    <em class="icon ni ni-repeat"></em>&nbsp;
                                      Reset
                                 </button>
                                 <button  type="submit" class="btn btn-light bg-white">
-                                    <em class="icon ni ni-save"></em>
+                                    <em class="icon ni ni-save"></em>&nbsp;
                                      Submit Record
                                 </button>
                             </div>
@@ -242,4 +243,7 @@
             </div>
         </div>
     </div>
+
+    @include('pages.customers.address');
+
 </x-app-layout>

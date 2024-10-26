@@ -12,6 +12,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    
 
     <style>
         .form-control,
@@ -37,6 +38,17 @@
             height: 500px;
         }
     </style>
+
+    <script src="/vendor/assets/js/bundle.js?ver=3.0.3"></script>
+    <script src="/vendor/assets/js/scripts.js?ver=3.0.3"></script>
+    <script src="/vendor/assets/js/libs/datatable-btns.js?ver=3.0.3"></script>
+
+    <script src="/vendor/assets/js/example-sweetalert.js?ver=3.0.3"></script>
+
+    <script src="/vendor/assets/js/example-chart.js?ver=3.0.3"></script>
+    <script src="/vendor/assets/js/bundle.js?ver=3.0.3"></script>
+    <script src="./script.js"></script>
+
     @livewireStyles
 </head>
 
@@ -93,13 +105,6 @@
         </div>
     </div>
 
-    <script src="/vendor/assets/js/bundle.js?ver=3.0.3"></script>
-    <script src="/vendor/assets/js/scripts.js?ver=3.0.3"></script>
-    <script src="/vendor/assets/js/libs/datatable-btns.js?ver=3.0.3"></script>
-
-    <script src="/vendor/assets/js/example-sweetalert.js?ver=3.0.3"></script>
-
-    <script src="/vendor/assets/js/example-chart.js?ver=3.0.3"></script>
     <script>
         function go_to(uri) {
             window.location.href = uri;
